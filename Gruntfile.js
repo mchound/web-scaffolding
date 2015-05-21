@@ -4,11 +4,11 @@ module.exports = function(grunt) {
 
         watch: {
             browserify: {
-                files: ['javascripts/src/**/*.js', 'javascripts/src/**/*.jsx'],
+                files: ['javascripts/**/*.js', 'javascripts/**/*.jsx'],
                 tasks: ['browserify:dev']
             },
             less: {
-                files: 'styles/src/**/*.less',
+                files: 'styles/**/*.less',
                 tasks: ['less:dev']
             }
         },
@@ -26,8 +26,8 @@ module.exports = function(grunt) {
                     },
                     transform: [require('grunt-react').browserify]
                 },
-                src: ['javascripts/src/**/*.js'],
-                dest: 'javascripts/build/application.js'
+                src: ['javascripts/**/*.js'],
+                dest: 'client/build/application.js'
             },
             build: {
                 options: {
@@ -41,18 +41,18 @@ module.exports = function(grunt) {
                     },
                     transform: [require('grunt-react').browserify]
                 },
-                src: ['javascripts/src/**/*.js'],
-                dest: 'javascripts/build/application.js'
+                src: ['javascripts/**/*.js'],
+                dest: 'client/build/application.js'
             }
         },
         uglify: {
             client: {
                 options: {
                     sourceMap: true,
-                    sourceMapName: 'javascripts/build/application.min.js.sourcemap'
+                    sourceMapName: 'client/build/application.min.js.sourcemap'
                 },
                 files: {
-                    'javascripts/build/application.min.js': ['javascripts/build/application.js']
+                    'client/build/application.min.js': ['client/build/application.js']
                 }
             }
         },
@@ -62,11 +62,11 @@ module.exports = function(grunt) {
                 options: {
                     paths: ["styles"],
                     sourceMap: true,
-                    sourceMapFilename: "styles/build/site.css.map",
-                    sourceMapBasepath: "styles/build"
+                    sourceMapFilename: "client/build/site.css.map",
+                    sourceMapBasepath: "client/build"
                 },
                 files: {
-                    "styles/build/site.css": "styles/src/import.less"
+                    "client/build/site.css": "client/src/import.less"
                 }
             },
             build: {
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
                     compress: true
                 },
                 files: {
-                    "styles/build/site.min.css": "styles/src/import.less"
+                    "client/build/site.min.css": "client/src/import.less"
                 }
             }
         }
