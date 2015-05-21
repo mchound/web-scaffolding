@@ -1,1 +1,19 @@
-@import 'components/component.less';
+@import 'settings.less';
+@import 'common/reset.less';
+@import 'components/my-component/my-component.less';
+
+@media(min-width: @screen-xs){
+	@import 'components/my-component/my-component-xs.less';
+}
+
+@media(min-width: @screen-sm){
+	@import 'components/my-component/my-component-sm.less';
+}
+
+@media(min-width: @screen-md){
+	@import 'components/my-component/my-component-md.less';
+}
+
+@media(min-width: @screen-lg){
+	@import 'components/my-component/my-component-lg.less';
+}
