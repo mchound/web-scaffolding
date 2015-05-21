@@ -66,7 +66,7 @@ module.exports = function(grunt) {
                     sourceMapBasepath: "client/build"
                 },
                 files: {
-                    "client/build/site.css": "client/src/import.less"
+                    "client/build/site.css": "styles/import.less"
                 }
             },
             build: {
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
                     compress: true
                 },
                 files: {
-                    "client/build/site.min.css": "client/src/import.less"
+                    "client/build/site.min.css": "styles/import.less"
                 }
             }
         }
